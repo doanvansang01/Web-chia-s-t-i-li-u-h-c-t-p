@@ -42,43 +42,7 @@
 				//tính vị trí đầu tiên của mỗi trang
 				$vtbd = $trang * $dong;
 				
-				
-				
-
-				
-				// Tìm Kiếm textbox
-				// if(isset($_POST['txt_find']) )
-				// {
-					// $dong = 12; // so dong tren 1 trang
-		
-					// if(isset($_GET['page'])) // neu ngta chon thi trang se la noi ngta chon, neu chwa thif laf 0
-					// {
-						// $trang = $_GET['page']; 
-					// }else{
-						// $trang = 0 ;
-					// }
-					
-					// $connect = mysqli_connect("localhost","root","","library")or die("Connect faild");
-					// // tlap bang ma cho connect
-					// mysqli_set_charset($connect, 'utf8');
-					// $keyword = $_POST['txt_find'];
-					// $sqlcommand="select * from document where deleted = 0 and status = 1 and  title like '%$keyword%'";
-					// $rs = mysqli_query($connect,$sqlcommand);
-					// $sodongdl = mysqli_num_rows($rs);
-					
-					// // tính số trang
-					// $sotrangdl = $sodongdl/$dong;
-					// //tính vị trí đầu tiên của mỗi trang
-					// $vtbd = $trang * $dong;
-					
-					// $sql = "select *
-							// from document 
-							// where  deleted = 0 and status  = 1 and  title like '%$keyword%' limit  $vtbd , $dong ";
-							
-				// }
-				// else{
 					$sql = "select * from document where deleted = 0 and status =1 limit  $vtbd , $dong";
-				//}
 				
 				
 				$kqphantrang = mysqli_query($connect,$sql);
@@ -87,14 +51,12 @@
 				{
 					
 					echo '<div class="col-md-3 col-6 product-item" style="padding-top:20px">
-							<a href="HienThiVanBan.php?id='.$item['id'].'"><img src="hinhanh/'.$item['thumbnail'].'" style="width: 100%; height: 180px;"></a>
+							<a href="HienThiVanBan.php?id='.$item['id'].'"><img src="hinhanh/'.$item['thumbnail'].'" style=" height: 180px;"></a>
 							<a href="HienThiVanBan.php?id='.$item['id'].'"> <p style="font-weight: bold; color:black; height:30px">'.$item['title'].'</p></a>
 							<a ><p style="font-weight: bold; ">Lượt tải: '.$item['downloads'].'</p></a>
 							<button class="btn btn-success"  ><a class="a_download" href="HienThiVanBan.php?id='.$item['id'].'" >Download</a></button>
 						  </div>';
-	  
-				}
-					
+				}					
 			?>
 			
 			</div>
@@ -102,19 +64,7 @@
 		
 			
 			
-		</div>
-		
-        <div class="row">
-				<div style="margin:0 250;">
-					<?php
-						for($i = 0 ; $i < $sotrangdl  ; $i++)
-						{
-							echo "<button style='margin:5px'><a style='color:black;'  href ='trangchu.php?page=$i'>Trang $i</a></button>";
-
-						}
-					?>
-				</div>
-		</div>
+		</div>		
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -140,6 +90,4 @@
 <?php
 	//require_once('footer.php');
 ?>
-
-<!-- <img src="hinhanh/'.$item['thumbnail'].'" style="width: 100%; height: 180px;">
 				
