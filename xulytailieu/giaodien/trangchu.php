@@ -56,9 +56,21 @@
 			?>
 			
 			</div>
+
 	
 		</div>		
 
+		<div class="row">
+				<div style="margin:0 250;">
+					<?php
+						for($i = 0 ; $i < $sotrangdl  ; $i++)
+						{
+							echo "<button style='margin:5px'><a style='color:black;'  href ='trangchu.php?page=$i'>Trang $i</a></button>";
+
+						}
+					?>
+				</div>
+		</div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
