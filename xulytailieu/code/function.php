@@ -20,10 +20,10 @@
 	function execute($sql)
 	{
 		$conn = mysqli_connect("localhost","root","","library")or die("Connect faild");
-		mysqli_set_charset($connect,'utf8');
+		mysqli_set_charset($conn,'utf8');
 		
 		mysqli_query($conn,$sql);
-		mysqli_close($connect);
+		mysqli_close($conn);
 		
 		
 	}

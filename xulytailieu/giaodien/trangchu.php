@@ -2,13 +2,12 @@
 <?php
 	require_once('../code/function.php');
 	session_start();
-	
 ?>
 <?php require_once('headers.php');?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content="" />
         <meta name="author" content="" />
     </head>
@@ -40,18 +39,15 @@
 				// tính số trang
 				$sotrangdl = $sodongdl/$dong;
 				//tính vị trí đầu tiên của mỗi trang
-				$vtbd = $trang * $dong;
-				
+				$vtbd = $trang * $dong;				
 					$sql = "select * from document where deleted = 0 and status =1 limit  $vtbd , $dong";
-				
-				
 				$kqphantrang = mysqli_query($connect,$sql);
 				
 				while($item = mysqli_fetch_array($kqphantrang))
 				{
 					
 					echo '<div class="col-md-3 col-6 product-item" style="padding-top:20px">
-							<a href="HienThiVanBan.php?id='.$item['id'].'"><img src="hinhanh/'.$item['thumbnail'].'" style=" height: 180px;"></a>
+							<a href="HienThiVanBan.php?id='.$item['id'].'"><img src="hinhanh/'.$item['thumbnail'].'" style="width: 100%; height: 180px;"></a>
 							<a href="HienThiVanBan.php?id='.$item['id'].'"> <p style="font-weight: bold; color:black; height:30px">'.$item['title'].'</p></a>
 							<a ><p style="font-weight: bold; ">Lượt tải: '.$item['downloads'].'</p></a>
 							<button class="btn btn-success"  ><a class="a_download" href="HienThiVanBan.php?id='.$item['id'].'" >Download</a></button>
@@ -60,10 +56,7 @@
 			?>
 			
 			</div>
-			
-		
-			
-			
+	
 		</div>		
 
         <!-- Bootstrap core JS-->
