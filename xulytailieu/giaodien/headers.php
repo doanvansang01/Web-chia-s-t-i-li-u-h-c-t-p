@@ -59,7 +59,7 @@ require_once('../code/function.php');
 						if(!isset($_SESSION['login'])){		
 					?>
 					<div id="div-button-upload">
-						<button class="btn_upload" style="border-radius: 7px";><a href="../../xulytaikhoan/dangnhap.php" style="color:black;border-radius: 20px;">Upload</a></button>
+						<button class="btn_upload" style="border-radius: 7px";><!--9-->Upload</a></button>
 					</div>
 					
 					<div id="div-button-login">
@@ -74,7 +74,7 @@ require_once('../code/function.php');
 						}else if($_SESSION['role'] == '1'){ $id= $_SESSION['id'];
 					?>
 					<div id="div-button-upload">
-						<button class="btn_upload" style="border-radius: 7px"><a href="upload.php" style="color:black;border-radius: 7px">Upload</a></button>
+						<button class="btn_upload" style="border-radius: 7px"><!--8-->Upload</a></button>
 					</div>
 					
 					<div id="wamper-menu-User">
@@ -100,7 +100,7 @@ require_once('../code/function.php');
 					<?php } else if($_SESSION['role'] == '0'){$id= $_SESSION['id']; ?>
 					
 					<div id="div-button-upload">
-						<button class="btn_upload" style="color:black; border-radius: 7px"><a href="upload.php"  style="color:black;" >Upload</a></button>
+						<button class="btn_upload" style="color:black; border-radius: 7px"><!--10-->Upload</a></button>
 					</div>
 					
 					<div id="wamper-menu-User">
@@ -151,19 +151,16 @@ require_once('../code/function.php');
 					?>
 					<nav class="navbar navbar-expand-sm bg-dark">	
 						<ul  class="navbar-nav" style="margin-left:200px">
+						<?php
 							
-							<?php
+							foreach($data as $item)
+							{
+								echo '<li  class="nav-item">
+										<a class="nav-link" style="color:white; margin-left:30px " href="theloai.php?category_id='.$item['id'].'"> '.$item['name'].'</a>
+									<li>';
+							}
 							
-								foreach($data as $item)
-								{
-									echo '<li  class="nav-item">
-											<a class="nav-link" style="color:white; margin-left:30px " href="theloai.php?category_id='.$item['id'].'"> '.$item['name'].'</a>
-										<li>';
-								}
-								
-							?>
-							
-							
+						?>
 						</ul>
 					</nav>	
 				</div>
