@@ -4,7 +4,7 @@
 	session_start();
 	
 ?>
-<?php //require_once('headers.php');?>
+<?php require_once('headers.php');?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -88,6 +88,6 @@
 	</body>
 </html>
 <?php
-	//require_once('footer.php');
+	require_once('footer.php');
 ?>
 				
