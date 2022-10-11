@@ -44,11 +44,11 @@
 						// tính số trang
 						$sotrangdl = $sodongdl/$dong;
 						//tính vị trí đầu tiên của mỗi trang
-						//$vtbd = $trang * $dong;
+						$vtbd = $trang * $dong;
 						
-						//$sql = "select *
-								//from document 
-								//where  deleted = 0 and status  = 1 and  title like '%$keyword%' limit  $vtbd , $dong ";
+						$sql = "select *
+								from document 
+								where  deleted = 0 and status  = 1 and  title like '%$keyword%' limit  $vtbd , $dong ";
 							
 					}
 					else if(isset($_GET['timkiem']) )
@@ -64,13 +64,26 @@
 						// tính số trang
 						$sotrangdl = $sodongdl/$dong;
 						//tính vị trí đầu tiên của mỗi trang
-						//$vtbd = $trang * $dong;
+						$vtbd = $trang * $dong;
 						
-						//$sql = "select *
-								//from document 
-								//where  deleted = 0 and status  = 1 and  title like '%$keyword%' limit  $vtbd , $dong ";
+						$sql = "select *
+								from document 
+								where  deleted = 0 and status  = 1 and  title like '%$keyword%' limit  $vtbd , $dong ";
 							
 					}
+					$kqphantrang = mysqli_query($connect,$sql);
+				
+				while($item = mysqli_fetch_array($kqphantrang))
+				{
+					
+					echo '<div class="col-md-3 col-6 product-item" style="padding-top:20px">
+							<a href="HienThiVanBan.php?id='.$item['id'].'"><img src="hinhanh/'.$item['thumbnail'].'" style="width: 100%; height: 180px;"></a>
+							<a href="HienThiVanBan.php?id='.$item['id'].'"> <p style="font-weight: bold; color:black; height:30px">'.$item['title'].'</p></a>
+							<a ><p style="font-weight: bold; ">Lượt tải: '.$item['downloads'].'</p></a>
+							<button class="btn btn-success"  ><a class="a_download" href="HienThiVanBan.php?id='.$item['id'].'" >Download</a></button>
+						  </div>';
+	  
+				}
 					
 			?>
 			
@@ -83,7 +96,7 @@
 					<?php
 						for($i = 0 ; $i < $sotrangdl  ; $i++)
 						{
-							echo "<button style='margin:5px'><a style='color:black;'  href ='find.php?page=$i&timkiem=$keyword'>Trang $i</a></button>";
+							echo "<button style='margin:5px'><a style='color:black;'  href ='find.php?page=$i&title=$keyword'>Trang $i</a></button>";
 
 						}
 					?>
@@ -116,4 +129,3 @@
 ?>
 
 <!-- <img src="hinhanh/'.$item['thumbnail'].'" style="width: 100%; height: 180px;">
-				
