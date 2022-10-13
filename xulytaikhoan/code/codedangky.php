@@ -58,12 +58,3 @@ if(isset($_POST['btnSignin'])){
 									//5. đóng kết nối            
 									mysqli_close($connect);					
 								}
-
-
-
-					
-						
-				
-			  	
-				
-?>				
