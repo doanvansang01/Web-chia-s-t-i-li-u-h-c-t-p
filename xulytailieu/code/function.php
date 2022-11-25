@@ -1,7 +1,7 @@
 <?php
 	
 	function executeResult($sql){
-		$connect = mysqli_connect("localhost","root","","library")or die("Connect faild");
+		$connect = mysqli_connect("localhost","root","0934910119AN","library")or die("Connect faild");
 		mysqli_set_charset($connect,'utf8');
 		$data = [];// nơi chứa dữ liệu đầu ra, nó chứa 1 mảng các trường
 		
@@ -27,4 +27,3 @@
 		
 		
 	}
-?>
