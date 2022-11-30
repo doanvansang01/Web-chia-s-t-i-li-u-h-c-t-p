@@ -28,7 +28,7 @@ session_start();
 				$trang = 0;
 			}
 
-			$connect = mysqli_connect("localhost", "root", "0934910119AN", "library") or die("Connect faild");
+			$connect = mysqli_connect("localhost", "root", "", "library") or die("Connect faild");
 			// tlap bang ma cho connect
 			mysqli_set_charset($connect, 'utf8');
 
